@@ -1,0 +1,45 @@
+@media all and (max-width: 1200px) {}
+
+@media all and (max-width: 1080px) {
+}
+
+@media (max-width: 1024px) {
+  
+}
+
+@media (max-width: 992px) {
+    .menu-icon {
+        display: block;
+        color: #000;
+    }
+
+    .menu-area {
+        display: none;
+    }
+    .top-bar-right-btn {
+        display: none;
+    }
+    .bottom-btn{
+        display: block;
+       
+    }
+
+}
+
+@media (max-width: 768px) {
+    .top-left > a > img {
+        width: 190px;
+    }
+    .top-right-img {
+        width: 17px;
+    }
+   
+}
+
+@media (max-width: 480px) {
+ 
+}
+
+@media (max-width: 320px) {
+ 
+}
