@@ -2,6 +2,15 @@
 <html lang="{{ @Helper::currentLanguage()->code }}" dir="{{ @Helper::currentLanguage()->direction }}">
 <head>
     @include('frontEnd.includes.head')
+    <style>
+  .header-right-btn {
+    padding: 10px 20px;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 6px !important;
+}
+.header-dwn-btn{width: 90px;}
+    </style>
 </head>
 <body>
 <div class="top-section py-3">
@@ -9,15 +18,15 @@
         <div class="top-bar d-flex justify-content-between">
           <i class="fa fa-bars menu-icon"></i>
           <div class="top-left">
-            <a href="#"><img src="{{asset('assets/frontend/img/bajji-img/top-logo.svg')}}" alt="" /></a>
+            <a href="{{ route('Home')}}"><img src="{{asset('assets/frontend/img/logo/bajji99-logo.png')}}" alt="" /></a>
           </div>
           <div class="top-right d-flex">
             <div class="top-bar-right-btn">
-              <a href="#" class="btn btn-warning mr-2">প্রবেশ করুন</a>
-              <a href="#" class="btn btn-primary mr-2">এখনি যোগদিন</a>
+              <a href="{{ route('front.login')}}" class="btn btn-warning mr-2 header-right-btn">প্রবেশ করুন</a>
+              <a href="{{ route('front.register')}}" class="btn btn-primary mr-2 header-right-btn">এখনি যোগদিন</a>
             </div>
-            <div class="dropdown">
-              <button
+            <div class="dropdown header-dwn-btn">
+              <button style="width:100%; border-radius:20px !important;"
                 class="btn btn-secondary dropdown-toggle p-1"
                 type="button"
                 data-toggle="modal"
@@ -135,5 +144,7 @@
             }, scrollingTime);
         });
     </script>
+
+    @Stack('script')
 </body>
 </html>

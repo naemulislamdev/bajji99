@@ -23,6 +23,7 @@ use Mail;
 use Redirect;
 use Helper;
 use Auth;
+use View;
 
 class HomeController extends Controller
 {
@@ -235,6 +236,24 @@ class HomeController extends Controller
                 "HomePartners",
                 "LatestNews"));
 
+    }
+    public function login(){
+        $site_desc_var = "site_desc_" . @Helper::currentLanguage()->code;
+        $site_keywords_var = "site_keywords_" . @Helper::currentLanguage()->code;
+        $PageTitle = "Login";
+        $PageDescription = Helper::GeneralSiteSettings($site_desc_var);
+        $PageKeywords = Helper::GeneralSiteSettings($site_keywords_var);
+        return View('frontEnd.login',compact("PageTitle","PageDescription",
+                "PageKeywords",));
+    }
+    public function register(){
+        $site_desc_var = "site_desc_" . @Helper::currentLanguage()->code;
+        $site_keywords_var = "site_keywords_" . @Helper::currentLanguage()->code;
+        $PageTitle = "Register";
+        $PageDescription = Helper::GeneralSiteSettings($site_desc_var);
+        $PageKeywords = Helper::GeneralSiteSettings($site_keywords_var);
+        return View('frontEnd.register',compact("PageTitle","PageDescription",
+                "PageKeywords",));
     }
 
     public function topic($section = 0, $id = 0)

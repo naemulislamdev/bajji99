@@ -66,6 +66,8 @@ Route::get('/sitemap.xml', [SiteMapController::class, 'siteMap'])->name('siteMap
 Route::get('/{lang}/sitemap', [SiteMapController::class, 'siteMap'])->name('siteMapByLang');
 
 Route::get('/', [HomeController::class, 'HomePage'])->name('Home');
+Route::get('/login', [HomeController::class, 'login'])->name('front.login');
+Route::get('/register', [HomeController::class, 'register'])->name('front.register');
 
 Route::post('/form-submit', [HomeController::class, 'formSubmit'])->name('formSubmit');
 

@@ -358,8 +358,50 @@ footer{
     font-size: 15px;
     margin-right: 20px;
 }
+.partnet-box{
+    text-align: center;
+}
+.partnet-box > img{ width: 65px;}
+.partnet-box > span {
+    color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+}
+.sub-para-box > .responsible-g > img{
+    width: 50px;
+}
+.sub-para-box > h4{
+    font-size: 17px;
+    line-height: 33px;
+    color: #fff;
+}
+.sub-para-box > div > img {
+    width: 200px;
+}
 .copyright-section{
     background-color: #161616;
+}
+/*--------------Register css ---------------------------*/
+.regisnter-seciton{
+    background-color: #ddd;
+    padding: 17px 0px;
+}
+.register-container{}
+.register-container > h1{
+text-align: center;
+font-size: 24px;
+font-weight: 700;
+margin: 0;
+}
+.register-container > p {
+    text-align: center;
+    color: #000;
+    font-size: 17px;
+}
+.register-box {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px 6px;
 }
 
 
