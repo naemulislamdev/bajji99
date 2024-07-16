@@ -31,22 +31,33 @@ label {
                     <div class="register-box">
                         <div class="row">
                             <div class="col-md-7 mx-auto">
-                                <form>
+                                <form action="{{ route('register.store')}}" method="POST">
+                                    @csrf
                                     <div class="form-group">
                                         <div class="d-flex justify-content-between">
                                             <label>ব্যবহারকারীর নাম <span class="text-danger">*</span></label> <a class="tooltip-btn" href="#" data-toggle="tooltip" data-placement="top" title="কমপক্ষে ৬ থেকে ১১ টি আক্ষর থাকতে হবে।">?</a>
                                         </div>
-                                        <input type="text" name="name" class="form-control" placeholder="এখানে পূ্রন করুন">
+                                        <input type="text" id="username" name="username" autocomplete="off" class="form-control" placeholder="এখানে পূ্রন করুন">
+                                            <span id="username-error" class="text-danger"></span>
+                                        @error('user_name')
+                                        <span class="text-danger">{{$message}}</span>
+                                        @enderror
                                     </div>
                                     <div class="form-group">
                                         <div class="d-flex justify-content-between">
                                             <label>গোপন নম্বর <span class="text-danger">*</span></label> <a class="tooltip-btn" href="#" data-toggle="tooltip" data-placement="top" title="কমপক্ষে ৬ থেকে ১৪ টি আক্ষর থাকতে হবে।">?</a>
                                         </div>
-                                        <input type="text" name="name" class="form-control" placeholder="এখানে পাসওয়ার্ড নিশ্চিত করুন">
+                                        <input type="password" name="password" class="form-control" placeholder="এখানে পাসওয়ার্ড নিশ্চিত করুন">
+                                        @error('password')
+                                        <span class="text-danger">{{$message}}</span>
+                                        @enderror
                                     </div>
                                     <div class="form-group">
                                             <label>পাসওয়ার্ড নিশ্চিত করুন <span class="text-danger">*</span></label>
-                                        <input type="text" name="name" class="form-control" placeholder="পাসওয়ার্ড নিশ্চিত করুন">
+                                        <input type="password" name="confirm_password" class="form-control" placeholder="পাসওয়ার্ড নিশ্চিত করুন">
+                                        @error('confirm_password')
+                                        <span class="text-danger">{{$message}}</span>
+                                        @enderror
                                     </div>
                                     <div class="form-group">
                                             <label>মুদ্রা <span class="text-danger">*</span></label>
@@ -56,29 +67,35 @@ label {
                                             </div>
                                             <div class="col-md-10">
                                                 <select class="form-control" name="mudra">
-                                                    <option class="bdt">BDT</option>
-                                                    <option class="inr">INR</option>
-                                                    <option class="npr">NPR</option>
+                                                    <option value="bdt">BDT</option>
+                                                    <option value="inr">INR</option>
+                                                    <option value="npr">NPR</option>
                                                 </select>
                                             </div>
                                         </div>
+                                        @error('mudra')
+                                        <span class="text-danger">{{$message}}</span>
+                                        @enderror
                                     </div>
                                     <div class="form-group">
                                             <label>মোবাইল নম্বর <span class="text-danger">*</span></label>
                                         <div class="row">
                                             <div class="col-md-3">
-                                                <input type="text" placeholder="+880" value="+880" readonly id="" class="form-control">
+                                                <input type="text" placeholder="+880" value="+880" readonly class="form-control">
                                             </div>
                                             <div class="col-md-9">
-                                                <input type="text" placeholder="এখানে পূ্রন করুন" class="form-control">
+                                                <input type="text" placeholder="এখানে পূ্রন করুন" name="phone" class="form-control">
                                             </div>
                                         </div>
+                                        @error('phone')
+                                        <span class="text-danger">{{$message}}</span>
+                                        @enderror
                                     </div>
                                     <div class="form-group">
                                         <label>ভেরিফিকেশন কোড <span class="text-danger">*</span></label>
                                         <div class="row">
                                             <div class="col-md-8">
-                                                <input type="text" placeholder="এখানে কোড টি লিখুন" name="verify" id="verify" class="form-control">
+                                                <input type="text" placeholder="এখানে কোড টি লিখুন" name="verify_code" id="verify" class="form-control">
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="input-group mb-3">
@@ -89,11 +106,14 @@ label {
                                                 </div>
                                             </div>
                                             <div class="col-12"><span id="validation-message" class="form-text text-danger text-bold"></span></div>
+                                            @error('verify_code')
+                                        <span class="text-danger">{{$message}}</span>
+                                        @enderror
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        <button class="btn btn-warning col-md-12">নিবন্ধন</button>
+                                        <button type="submit" class="btn btn-warning col-md-12">নিবন্ধন</button>
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
@@ -147,5 +167,26 @@ label {
         });
     });
 </script>
+<script>
+    $(document).ready(function() {
+        $('#username').on('input', function() {
+            validateUsername();
+        });
+
+        function validateUsername() {
+            var username = $('#username').val();
+            var usernameError = $('#username-error');
+            var regex = /^[a-zA-Z0-9]{6,13}$/;
+
+            if (username === '') {
+                usernameError.text('This is a mandatory field.');
+            } else if (!regex.test(username)) {
+                usernameError.text('Must contain 6 to 13 characters/numbers and letters only.');
+            } else {
+                usernameError.text('');
+            }
+        }
+    });
+    </script>
 
 @endpush

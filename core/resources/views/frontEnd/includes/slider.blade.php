@@ -44,6 +44,9 @@
     position: absolute;
     left: 0%;
 }
+.flexslider .slides img {
+    height: 300px;
+}
 </style>
 
 

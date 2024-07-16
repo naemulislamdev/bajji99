@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\Auth\SocialAuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\SiteMapController;
+use App\Http\Controllers\UserDashboardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -68,8 +70,15 @@ Route::get('/{lang}/sitemap', [SiteMapController::class, 'siteMap'])->name('site
 Route::get('/', [HomeController::class, 'HomePage'])->name('Home');
 Route::get('/login', [HomeController::class, 'login'])->name('front.login');
 Route::get('/register', [HomeController::class, 'register'])->name('front.register');
+Route::post('/register/store', [RegisterController::class, 'registerStore'])->name('register.store');
+Route::get('/logout', [RegisterController::class, 'logout'])->name('user.logout');
+Route::get('/login/store', [RegisterController::class, 'loginStore'])->name('login.store');
 
 Route::post('/form-submit', [HomeController::class, 'formSubmit'])->name('formSubmit');
+Route::middleware('user','verified')->as('user.')->group(function(){
+    Route::get('profile/dashboard', [UserDashboardController::class,'dashboard'])->name('dashboard');
+    Route::get('profile/personal', [UserDashboardController::class,'profile'])->name('profile');
+});
 
 // ../home url
 Route::get('/home', [HomeController::class, 'HomePage'])->name('HomePage');
@@ -111,5 +120,6 @@ Route::get('/{lang?}/{seo_url_slug}', [HomeController::class, 'SEOByLang'])->nam
 
 // ..if page by name and language( ex: www.site.com/ar/about )
 Route::get('/{lang?}/topic/{id}', [HomeController::class, 'topicByLang'])->name('FrontendPageByLang');
+
 // .. End of Frontend Route
 

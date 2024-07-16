@@ -80,9 +80,3 @@
         <a href="#" class="live-chat-img"><img src="{{asset('assets/frontend/img/bajji-img/live-chat.jpeg')}}" alt="Live Chat"></a>
        </div>
     </div>
-    <div class="bottom-btn">
-      <div class="d-flex">
-        <a href="#" class="bottom-btn1">প্রবেশ করুন</a>
-        <a href="#" class="bottom-btn2">এখনি যোগদিন</a>
-      </div>
-    </div>

@@ -19,6 +19,9 @@
     .top-bar-right-btn {
         display: none;
     }
+    .ud-sidebar {
+        display: none;
+    }
     .bottom-btn{
         display: block;
        

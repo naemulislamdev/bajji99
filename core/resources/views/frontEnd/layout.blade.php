@@ -94,6 +94,46 @@
     <!-- start footer -->
 @include('frontEnd.includes.footer')
 <!-- end footer -->
+<div class="bottom-btn d-none">
+    <div class="d-flex">
+      <a href="#" class="bottom-btn1">প্রবেশ করুন</a>
+      <a href="#" class="bottom-btn2">এখনি যোগদিন</a>
+    </div>
+  </div>
+<div class="bottom-btn">
+    <div class="d-flex ud-ac-manue">
+      <a href="#" class="ud-ac-manue-item">
+        <div class="v-btn">
+            <img src="{{asset('assets/frontend/dashboard/image/icon/referral.svg')}}" alt="">
+            <p>Referral</p>
+        </div>
+      </a>
+      <a href="#" class="ud-ac-manue-item">
+        <div class="v-btn">
+            <img src="{{asset('assets/frontend/dashboard/image/icon/promotion.svg')}}" alt="">
+            <p>Promotion</p>
+        </div>
+      </a>
+      <a href="#" class="ud-ac-manue-item">
+        <div class="v-btn">
+            <img src="{{asset('assets/frontend/dashboard/image/icon/home.svg')}}" alt="">
+            <p>Home</p>
+        </div>
+      </a>
+      <a href="#" class="ud-ac-manue-item">
+        <div class="v-btn">
+            <img src="{{asset('assets/frontend/dashboard/image/icon/deposit.svg')}}" alt="">
+            <p>Deposit</p>
+        </div>
+      </a>
+      <a href="#" class="ud-ac-manue-item">
+        <div class="v-btn">
+            <img src="{{asset('assets/frontend/dashboard/image/icon/account.svg')}}" alt="">
+            <p>Account</p>
+        </div>
+      </a>
+    </div>
+  </div>
 </div>
 @include('frontEnd.includes.foot')
 @yield('footerInclude')

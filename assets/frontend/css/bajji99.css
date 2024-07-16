@@ -45,7 +45,7 @@ img {
 
 /*Topbar Section*/
 .top-left > a > img{
-    width: 300px;
+    width: 150px;
 }
 .top-right-img {
     width: 30px;
@@ -70,10 +70,29 @@ img {
     background: #007bff;
     display: inline-block;
     width: 50%;
-    padding: 15px 0px;
+    padding: 3px 0px;
     color: #fff;
 }
 
+/*-----------User dashboard mobile manue design-------------*/
+.bottom-btn > .ud-ac-manue {
+    background-color: #000;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.bottom-btn > .ud-ac-manue > .ud-ac-manue-item{
+    width: 20%;
+    padding: 10px 0;
+    color: #fff;
+}
+.bottom-btn > .ud-ac-manue > .ud-ac-manue-item > .v-btn > img{
+ 
+}
+.bottom-btn > .ud-ac-manue > .ud-ac-manue-item > .v-btn >p {
+    margin: 0px;
+    font-size: 13px;
+    font-weight: 600;
+}
 /*header area styles*/
 
 .navbar {
