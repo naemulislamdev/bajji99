@@ -4,9 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\UserRequest;
 use App\Models\User;
+use App\Models\UserDetails;
 use Auth;
 use Hash;
-use Request;
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -17,15 +18,22 @@ class RegisterController extends Controller
             $user = User::create([
                 'name' => $request->username,
                 'email' => $request->username . '@gmail.com',
+                'email_verified_at' => now(),
                 'password' => Hash::make($request->password),
-                'role' => 'user'
+                'role' => 'user',
+                'status' => true
+            ]);
+            UserDetails::create([
+                'user_id' => $user->id,
+                'phone' => $request->phone,
+                'currency' => $request->currency,
             ]);
 
             // Automatically log in the user
             Auth::login($user);
 
             // Redirect to the user dashboard
-            return redirect()->route('user.dashboard')->with('success', 'Successfully Register!');
+            return redirect()->route('user.deposit')->with('success', 'Successfully Register!');
         } catch (\Exception $e) {
             return response()->json([
                 'message' => 'Failed to create user',
@@ -34,21 +42,19 @@ class RegisterController extends Controller
         }
     }
     public function loginStore(Request $request){
-        $request->validate([
+        $this->validate($request,[
             'username' => 'required|string',
             'password' => 'required|string',
         ]);
 
-        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
-            return redirect()->route('user.dashboard');
+        if (Auth::attempt(['name' => $request->username, 'password' => $request->password])) {
+            return redirect()->route('Home')->with('success','Successfully login!');
         }
 
-        return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
-        ]);
+        return back()->with('error','The provided credentials do not match our records.');
     }
     public function logout(){
         Auth::logout();
-        return redirect()->route('Home')->with('success', 'Successfully Register!');
+        return redirect()->route('Home')->with('success', 'Logout Successfully!');
     }
 }

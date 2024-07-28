@@ -17,9 +17,10 @@ class UserMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if (!Auth::check()) {
-            return redirect()->route('front.login'); // Ensure this route exists
+        if (Auth::check() && Auth::user()->role == 'user') {
+            return $next($request);
+        } else {
+            return redirect()->route('front.login');
         }
-        return $next($request);
     }
 }

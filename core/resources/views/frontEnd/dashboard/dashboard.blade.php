@@ -2,7 +2,7 @@
 @section('title','Dashboard')
 @section('dashboard')
 
-<div class="col-md-9">
+<div class="col-md-7">
     <div class="row">
         <div class="col-md-6 d-flex">
             <div class="ud-content-2 flex-grow-1 mb-3 ajker-shadow">

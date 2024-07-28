@@ -21,10 +21,18 @@
             <a href="{{ route('Home')}}"><img src="{{asset('assets/frontend/img/logo/bajji99-logo.png')}}" alt="" /></a>
           </div>
           <div class="top-right d-flex">
+            @if(Auth::check())
+            <div class="profile-manue d-flex">
+                <a href="{{ route('user.profile')}}">{{Auth::user()->name}}</a>
+                <a href="{{ route('user.profile')}}" class="profile-icon"><i class="fa fa-user"></i></a>
+                <a href="#" class="profile-icon"><i class="fa fa-bell"></i></a>
+            </div>
+            @else
             <div class="top-bar-right-btn">
               <a href="{{ route('front.login')}}" class="btn btn-warning mr-2 header-right-btn">প্রবেশ করুন</a>
               <a href="{{ route('front.register')}}" class="btn btn-primary mr-2 header-right-btn">এখনি যোগদিন</a>
             </div>
+            @endif
             <div class="dropdown header-dwn-btn">
               <button style="width:100%; border-radius:20px !important;"
                 class="btn btn-secondary dropdown-toggle p-1"
@@ -35,6 +43,11 @@
                 <img class="top-right-img" src="{{asset('assets/frontend/img/bajji-img/bdt.svg')}}" alt="" />
               </button>
             </div>
+            @if(Auth::check())
+            <div class="logout-icon d-flex align-content-center">
+                <a href="{{ route('user.logout')}}"><i class="fa fa-unlock-alt"></i></a>
+            </div>
+            @endif
           </div>
         </div>
       </div>
@@ -94,12 +107,14 @@
     <!-- start footer -->
 @include('frontEnd.includes.footer')
 <!-- end footer -->
-<div class="bottom-btn d-none">
+@if(!Auth::check())
+<div class="bottom-btn">
     <div class="d-flex">
       <a href="#" class="bottom-btn1">প্রবেশ করুন</a>
       <a href="#" class="bottom-btn2">এখনি যোগদিন</a>
     </div>
   </div>
+  @else
 <div class="bottom-btn">
     <div class="d-flex ud-ac-manue">
       <a href="#" class="ud-ac-manue-item">
@@ -134,6 +149,7 @@
       </a>
     </div>
   </div>
+  @endif
 </div>
 @include('frontEnd.includes.foot')
 @yield('footerInclude')

@@ -6,8 +6,23 @@
     <script src="{{ URL::asset('assets/frontend/js/jquery.fancybox.pack.js') }}"></script>
 <script src="{{ URL::asset('assets/frontend/js/jquery.flexslider.js') }}"></script>
 <script src="{{ URL::asset('assets/frontend/js/custom.js') }}"></script>
-
 <script src="{{ URL::asset('assets/frontend/js/owl-carousel/owl.carousel.js') }}"></script>
+<script src="{{ URL::asset('assets/defaults/toastr/toastr.min.js') }}"></script>
+@if (Session::has('success'))
+    <script>
+        toastr.success("{{ Session::get('success') }}");
+    </script>
+    @endif
+    @if (Session::has('error'))
+    <script>
+        toastr.error("{{ Session::get('error') }}");
+    </script>
+    @endif
+    @if (Session::has('info'))
+    <script>
+        toastr.info("{{ Session::get('info') }}");
+    </script>
+    @endif
 
 <script>
       $(document).ready(function () {

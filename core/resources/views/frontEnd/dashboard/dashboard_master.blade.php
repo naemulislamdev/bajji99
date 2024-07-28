@@ -12,9 +12,9 @@ $request = request();
                         <h5 class="p-3 mb-0">Welcome Back! {{auth()->user()->name}}</h5>
                     </div>
                     <div class="ud-nav">
-                        <a class="" href=""><i class="fa fa-dashboard mr-1"></i> My Profile</a>
-                        <a class="" href=""><i class="fa fa-angle-double-right mr-1"></i> Deposit</a>
+                        <a class="{{$request->routeIs('user.deposit')? 'ud-active': '' }}" href="{{ route('user.deposit')}}"><i class="fa fa-angle-double-right mr-1"></i> Deposit</a>
                         <a class="" href=""><i class="fa fa-angle-double-right mr-1"></i> Withdrawal</a>
+                        <a class="{{$request->routeIs('user.profile')? 'ud-active': '' }}" href="{{ route('user.profile')}}"><i class="fa fa-angle-double-right mr-1"></i> My Profile</a>
                         <a class="" href=""><i class="fa fa-angle-double-right mr-1"></i> Voucher</a>
                         <a class="" href=""><i class="fa fa-angle-double-right mr-1"></i> Bet History</a>
                         <a class="" href=""><i class="fa fa-angle-double-right mr-1"></i> History</a>
@@ -35,5 +35,5 @@ $request = request();
 </section>
 @endsection
 @push('script')
-
+@stack('js')
 @endpush

@@ -42,6 +42,7 @@
 img {
   max-width: 100%;
   height: auto; }
+  .row{margin-bottom: 0 !important;}
 
 /*Topbar Section*/
 .top-left > a > img{
@@ -421,6 +422,37 @@ margin: 0;
     background-color: #fff;
     border-radius: 10px;
     padding: 20px 6px;
+}
+/*----header user profile icon design when user is login---*/
+.profile-manue {
+    align-items: center;
+    border-right: 2px solid #d6d6d6;
+    margin-right: 5px;
+}
+.profile-manue > a {
+    text-decoration: none;
+    color: #000;
+    font-size: 20px;
+    font-weight: 600;
+    margin-right: 10px;
+}
+.profile-manue > .profile-icon {
+    display: block;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #fdcf09;
+    color: #000;
+    padding: 10px 0px;
+    text-align: center;
+    font-size: 20px;
+}
+.logout-icon > a {
+    text-decoration: none;
+    font-size: 35px;
+    color: #000;
+    margin-left: 10px;
+    margin-top: 5px;
 }
 
 

@@ -39,7 +39,7 @@ label {
                                         </div>
                                         <input type="text" id="username" name="username" autocomplete="off" class="form-control" placeholder="এখানে পূ্রন করুন">
                                             <span id="username-error" class="text-danger"></span>
-                                        @error('user_name')
+                                        @error('username')
                                         <span class="text-danger">{{$message}}</span>
                                         @enderror
                                     </div>
@@ -66,14 +66,14 @@ label {
                                                 <img src="{{asset('assets/frontend/img/bajji-img/bdt.svg')}}" width="38px;" alt="">
                                             </div>
                                             <div class="col-md-10">
-                                                <select class="form-control" name="mudra">
+                                                <select class="form-control" name="currency">
                                                     <option value="bdt">BDT</option>
                                                     <option value="inr">INR</option>
                                                     <option value="npr">NPR</option>
                                                 </select>
                                             </div>
                                         </div>
-                                        @error('mudra')
+                                        @error('currency')
                                         <span class="text-danger">{{$message}}</span>
                                         @enderror
                                     </div>

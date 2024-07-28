@@ -72,12 +72,16 @@ Route::get('/login', [HomeController::class, 'login'])->name('front.login');
 Route::get('/register', [HomeController::class, 'register'])->name('front.register');
 Route::post('/register/store', [RegisterController::class, 'registerStore'])->name('register.store');
 Route::get('/logout', [RegisterController::class, 'logout'])->name('user.logout');
-Route::get('/login/store', [RegisterController::class, 'loginStore'])->name('login.store');
+Route::post('/login/store', [RegisterController::class, 'loginStore'])->name('login.store');
 
 Route::post('/form-submit', [HomeController::class, 'formSubmit'])->name('formSubmit');
 Route::middleware('user','verified')->as('user.')->group(function(){
-    Route::get('profile/dashboard', [UserDashboardController::class,'dashboard'])->name('dashboard');
-    Route::get('profile/personal', [UserDashboardController::class,'profile'])->name('profile');
+    Route::get('bank/deposit', [UserDashboardController::class,'deposit'])->name('deposit');
+    Route::group([],function(){
+        Route::get('profile/personal', [UserDashboardController::class,'profile'])->name('profile');
+        Route::post('profile/update/{user}', [UserDashboardController::class,'profileUpdate'])->name('profile.update');
+    });
+
 });
 
 // ../home url

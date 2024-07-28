@@ -17,6 +17,9 @@ class User extends Authenticatable
     use Notifiable;
     use TwoFactorAuthenticatable;
     protected $guarded =['id'];
+    public function userDetails(){
+        return $this->hasOne(UserDetails::class);
+    }
 
     /**
      * The attributes that are mass assignable.
@@ -29,6 +32,7 @@ class User extends Authenticatable
         'password',
         'photo',
         'permissions_id',
+        'role',
         'status',
         'permissions',
         'connect_email',

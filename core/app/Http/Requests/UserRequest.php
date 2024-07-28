@@ -27,7 +27,7 @@ class UserRequest extends FormRequest
             'username' => 'required|string|min:6|min:11|unique:users,name',
             'password' => 'required|same:confirm_password|min:6|max:14',
             'confirm_password' => 'required|min:6|max:14',
-            'mudra' => 'required|in:bdt,inr,npr',
+            'currency' => 'required|in:bdt,inr,npr',
             'phone' => 'required|max:11',
             'verify_code' => 'required'
         ];

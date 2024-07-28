@@ -3,6 +3,7 @@
 .ud-sidebar {
     background: #fff;
     min-height: 100%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .ud-account h5 {
@@ -162,4 +163,22 @@
     font-size: 12px;
     line-height: 18px;
     padding: 1px 5px;
+}
+/*----------------------------------------*/
+.main-panel {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 15px 30px;
+    border-radius: 5px;
+}
+
+label {
+    color: #000;
+    font-size: 17px;
+    margin-bottom: 13px;
+    font-weight: 500;
+}
+/*-------------my profile------*/
+.profile-edit-icon {
+    font-size: 25px;
+    color: #000;
 }
