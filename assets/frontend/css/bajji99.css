@@ -111,12 +111,12 @@ img {
   }
   .navbar-light .navbar-nav .nav-link {
     padding-top: 22px;
-    padding-bottom: 22px;
+    padding-bottom: 16px;
     transition: 0.3s;
     padding-left: 24px;
     padding-right: 24px;
     font-size: 14px;
-  }
+}
   .navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
     background: #74661070;
     transition: 0.3s;
@@ -160,7 +160,7 @@ img {
     left: 0;
     right: 0;
     padding: 15px;
-    background-color:rgba(34, 33, 33, 0.5);
+    background-color:rgba(34, 33, 33, 0.607);
   }
   .megamenu h6 {
     margin-left: 21px;
@@ -168,6 +168,12 @@ img {
   .megamenu i {
     width: 20px;
   }
+  .manue-active{
+    border-bottom: 5px solid #fdcf09;
+    color: #fed009 !important;
+    background: #74661070;
+    border-radius: 7px;
+}
 
 /*toggler css*/
 
@@ -242,7 +248,7 @@ img {
 .mm-ci {
     cursor: pointer;
 }
-
+.dp-g-img > a > img{width: 100px;}
 /***************** *********************
          Register banner style
 ****************** ********************/
@@ -301,14 +307,19 @@ img {
     margin-top: 5px;
     font-family: var(--lato);
 }
-.game-box > .content > h4{
-    font-size: 18px;
+.game-box > .content > h4 {
+    font-size: 14px;
     margin: 0;
+    text-align: center;
 }
 .game-box > .content > span{
     font-size: 13px;
 }
 /*---------Carousel slider banner ------*/
+.slider-mobile-img{
+    display: none;
+}
+.slider-mobile-img > img{width: 100%;}
 .carousel-indicators {
     margin-left: -67%;
 }
@@ -350,9 +361,10 @@ img {
     width: 70px;
     margin-bottom: 12px;
 }
-.bottom-right > div > .live-chat-img > img{
+.bottom-right > div > .live-chat-img > img {
     width: 70px;
     margin-bottom: 12px;
+    border-radius: 50%;
 }
 /*--------------Footer style ---------------------------*/
 footer{
@@ -454,7 +466,310 @@ margin: 0;
     margin-left: 10px;
     margin-top: 5px;
 }
+/*----game category----*/
+.game-categories {
+    background-color: #f3f5f6;
+    border-radius: 10px;
+    padding: 15px 8px;
+}
+
+.game-cagegory-box input {
+    display: none;
+}
+
+.game-cagegory-box > label {
+    cursor: pointer;
+    border: 2px solid #fdcf09;
+    padding: 10px;
+    border-radius: 25px;
+    width: 100%;
+    text-align: center;
+    background: #fff;
+    font-size: 16px;
+
+}
+.game-cagegory-box input:checked+label {
+    background: #fdcf09;
+    color: #000;
+}
+/*----promotion box css----*/
+.promotion-box {
+    background: #f3f5f6;
+    padding: 20px 20px;
+    border-radius: 7px;
+}
+.promotion-box > img {
+    width: 100%;
+    margin-bottom: 10px;
+}
+.promotion-content {
+    margin-top: 10px;
+}
+.promotion-content > h3 {
+    font-size: 21px;
+}
+.promotion-content > p{
+    font-size: 14px;
+    font-weight: 500;
+    color: #000;
+}
+/*----vpn profile section css----*/
+.vip-profile-section{
+    background: url('../img/bajji-img/vip-background.jpeg');
+    background-repeat: no-repeat;
+    object-position:center;
+    object-fit: cover;
+    padding: 20px 0;
+}
+.vip-profile-heading-box {
+    background-color: rgb(12, 42, 171);
+    border-radius: 20px;
+    color: #fff !important;
+    padding: 20px 20px;
+    margin-top: 100px;
+}
+.vip-profile-heading-box > h2 {
+    color: #fff;
+    font-size: 22px;
+    text-align: center;
+}
+.vip-profile-heading-box > h3 {
+    color: #fff;
+    font-size: 15px;
+    text-align: center;
+}
+.v-card {
+    padding: 16px 0px;
+    color: #fff;
+}
+.vip-summary-table {
+    background-color: #262626;
+    border-radius: 20px 20px 0 0!important;
+    padding: 10px 20px;
+}
+.vip-summary-table-content {
+    background-color: rgba(0,0,0,.6);
+    border-radius: 0 0 20px 20px!important;
+    padding: 10px 20px;
+}
+.v-avatar {
+    align-items: center;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    line-height: normal;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    overflow: hidden;
+}
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+}
+.icon-size {
+    height: 2em;
+}
+.vip-title {
+    color: #fff;
+    font-size: 17px;
+    font-weight: 600;
+}
+.ri-content > span {
+    font-size: 14px;
+    font-weight: 600;
+}
+.align-center{
+    align-items: center !important;
+}
+/*----vpn profile mobile responsive css----*/
+.vip-profile-mobile{
+    display: none;
+}
+.vip-layout-background {
+    background: #333!important;
+}
+.mv-img-bg {
+    padding: 74px 0px;
+    background-size: 100% 100%;
+}
+.mobile-progress-header-div {
+    display: flex;
+    color: #fff;
+    margin-left: 30px;
+    margin-right: 20px;
+    gap: 0 10px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8px;
+    padding-bottom: 10px;
+}
+.border-btn{border-bottom: 2px solid #ffce01;}
+.mobile-lvl-card {
+    background-color: #000;
+    box-shadow: 0 0 4px #ffce01 !important;
+    transform: skewX(-15deg);
+    height: 45px;
+    width: 0px;
+    color: #fff;
+    text-align: center;
+    padding-top: 5px;
+}
+.vip-progress-bar {
+    background-color: #111!important;
+    border: 8px solid #262626;
+    border-radius: 20px;
+    margin-top: 8px;
+}
+.mobile-progress-header-div > a {
+    width: 66px;
+    font-size: 14px;
+    display: block;
+    color: #fff;
+    font-weight: 700;
+    line-height: 15px;
+}
+
+.vip-timeline-wrapper {
+    height: 57vh;
+    overflow-y: scroll;
+}
+.v-timeline {
+    position: relative;
+    padding: 15px 15px;
+}
+.v-timeline-item {
+    padding-bottom: 30px!important;
+    display: flex;
+}
+.v-timeline-item_icon {
+    background-color: #000;
+    transform: skewX(-15deg);
+    height: 53px;
+    width: 67px;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    padding: 5px;
+    margin-right: 15px;
+}
+.v-timeline-item_icon > img {
+    width: 100%;
+    margin-top: -15px;
+    height: 44px;
+}
+.v-timeline-item_icon > span {
+    font-size: 16px;
+    font-weight: 600;
+    position: absolute;
+    bottom: -1px;
+    left: 66%;
+    color: #fed009;
+}
+.v-timeline-item_price{
+    background-color: #000;
+    transform: skewX(-15deg);
+    height: 53px;
+    width: 150px;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    padding: 5px;
+    margin-right: 15px;
+}
+
+.claim-btn {
+    color: #9b9b9b;
+    height: 55px!important;
+    width: 90px!important;
+    background-color: #474747;
+    transform: skewX(-15deg);
+    -webkit-transform: skewX(-15deg);
+    -moz-transform: skewX(-15deg);
+    -ms-transform: skewX(-15deg);
+    -o-transform: skewX(-15deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+/* categories-g-mobile-v */
+.categories-g-mobile-v{
+    display: none;
+}
+.homePageCat-box {
+    background: #000;
+    margin-right: 9px;
+    border-radius: 5px;
+    height: 74px;
+}
+.homePageCat-box > a{
+    color: #fff !important;
+    display: flex;
+    flex-direction: column;
+}
+.homePageCat-box > a > img {
+    width: 31px;
+    margin-bottom: 5px;
+}
+.homePageCat-box > a > span {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.nav-tabs {
+    display: flex;
+    overflow-x: auto; /* Enables horizontal scrolling */
+    white-space: nowrap; /* Prevents wrapping */
+    padding: 10px;
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: #fed009 #fed009; /* For Firefox */
+}
+
+.nav-tabs::-webkit-scrollbar {
+    height: 6px; /* For Chrome, Safari, and Edge */
+}
+
+.nav-tabs::-webkit-scrollbar-thumb {
+    background-color: #888; /* Thumb color */
+    border-radius: 10px; /* Rounded corners for the thumb */
+    border: 2px solid #333; /* Padding around the thumb */
+}
+
+.nav-tabs::-webkit-scrollbar-track {
+    background-color: #fed009;
+}
 
 
-
-
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: #495057;
+    background-color: #fed009;
+    border-color: #fff;
+    color: #000 !important;
+    height: 100%;
+}
+.md-g-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px !important;
+    min-width: 33vw;
+    max-width: 30vw;
+    height: auto!important;
+    flex-direction: column;
+    padding: unset;
+    margin-bottom: 15px;
+}
+.md-g-box > .game-box > .img-box {
+    height: 110px;
+}
+.md-cricket-img >img{
+    border-radius: 10px;
+    margin-bottom: 10px;
+}

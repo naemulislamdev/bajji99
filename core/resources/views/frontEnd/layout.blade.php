@@ -10,9 +10,41 @@
     border-radius: 6px !important;
 }
 .header-dwn-btn{width: 90px;}
+.loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+.loading-image {
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    z-index: 9999;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    box-shadow: inset 0px 0px 40px 40px #fff;
+}
+.loading-image > img {
+    width: 157px;
+    padding: 76px 5px;
+}
     </style>
 </head>
 <body>
+
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-image" id="loadingImage">
+            <img src="{{asset('assets/frontend/img/logo/bajji99-logo.png')}}" alt="Loading">
+        </div>
+    </div>
 <div class="top-section py-3">
       <div class="container">
         <div class="top-bar d-flex justify-content-between">
@@ -198,6 +230,19 @@
             setInterval(() => {
                 start_scroll();
             }, scrollingTime);
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            // Show the loading overlay on menu link click
+            $('.menu-link').on('click', function() {
+                $('#loadingOverlay').show();
+            });
+
+            // Hide the loading overlay when the page is fully loaded
+            $(window).on('load', function() {
+                $('#loadingOverlay').hide();
+            });
         });
     </script>
 

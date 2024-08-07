@@ -67,6 +67,15 @@ Route::get('/logout', function () {
 Route::get('/sitemap.xml', [SiteMapController::class, 'siteMap'])->name('siteMap');
 Route::get('/{lang}/sitemap', [SiteMapController::class, 'siteMap'])->name('siteMapByLang');
 Route::get('/', [HomeController::class, 'HomePage'])->name('Home');
+Route::get('/cricket', [HomeController::class, 'cricket'])->name('cricket');
+Route::get('/casino', [HomeController::class, 'casino'])->name('casino');
+Route::get('/sloat', [HomeController::class, 'sloat'])->name('sloat');
+Route::get('/tablegames', [HomeController::class, 'tablegames'])->name('tablegames');
+Route::get('/sportsbook', [HomeController::class, 'sportsbook'])->name('sportsbook');
+Route::get('/fishing', [HomeController::class, 'fishing'])->name('fishing');
+Route::get('/crash', [HomeController::class, 'crash'])->name('crash');
+Route::get('/promotion', [HomeController::class, 'promotion'])->name('promotion');
+Route::get('/vipProfile', [HomeController::class, 'vipProfile'])->name('vipProfile');
 Route::get('/login', [HomeController::class, 'login'])->name('front.login');
 Route::get('/register', [HomeController::class, 'register'])->name('front.register');
 Route::post('/register/store', [RegisterController::class, 'registerStore'])->name('register.store');

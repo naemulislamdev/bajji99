@@ -24,7 +24,23 @@
     }
     .bottom-btn{
         display: block;
-       
+    }
+    .vip-profile-section{
+        display: none;
+    }
+    .vip-profile-mobile{
+        display: block;
+    }
+    .register-banner{display: none;}
+    .desktop-v{display: none;}
+    .desktop-v{display: none;}
+    .categories-g-mobile-v{display: block;}
+    .slider-mobile-img{display: block;}
+    .carousel-indicators {
+        position: absolute;
+        left: 0;
+        top: -25px;
+        z-index: 15;
     }
 
 }

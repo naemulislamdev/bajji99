@@ -1,4 +1,5 @@
 @extends('frontEnd.layout')
+@section('title', $PageTitle)
 @section('content')
     <style>
         .tooltip-btn {

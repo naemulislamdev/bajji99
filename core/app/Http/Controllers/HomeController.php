@@ -237,6 +237,87 @@ class HomeController extends Controller
                 "LatestNews"));
 
     }
+    public function cricket(){
+        $site_desc_var = "site_desc_" . @Helper::currentLanguage()->code;
+        $site_keywords_var = "site_keywords_" . @Helper::currentLanguage()->code;
+        $PageTitle = "Cricket";
+        $PageDescription = Helper::GeneralSiteSettings($site_desc_var);
+        $PageKeywords = Helper::GeneralSiteSettings($site_keywords_var);
+        return View('frontEnd.cricket',compact("PageTitle","PageDescription",
+                "PageKeywords",));
+    }
+    public function casino(){
+        $site_desc_var = "site_desc_" . @Helper::currentLanguage()->code;
+        $site_keywords_var = "site_keywords_" . @Helper::currentLanguage()->code;
+        $PageTitle = "Casino";
+        $PageDescription = Helper::GeneralSiteSettings($site_desc_var);
+        $PageKeywords = Helper::GeneralSiteSettings($site_keywords_var);
+        return View('frontEnd.casino',compact("PageTitle","PageDescription",
+                "PageKeywords",));
+    }
+    public function sloat(){
+        $site_desc_var = "site_desc_" . @Helper::currentLanguage()->code;
+        $site_keywords_var = "site_keywords_" . @Helper::currentLanguage()->code;
+        $PageTitle = "Gloat game";
+        $PageDescription = Helper::GeneralSiteSettings($site_desc_var);
+        $PageKeywords = Helper::GeneralSiteSettings($site_keywords_var);
+        return View('frontEnd.sloat_game',compact("PageTitle","PageDescription",
+                "PageKeywords",));
+    }
+    public function tablegames(){
+        $site_desc_var = "site_desc_" . @Helper::currentLanguage()->code;
+        $site_keywords_var = "site_keywords_" . @Helper::currentLanguage()->code;
+        $PageTitle = "Table game";
+        $PageDescription = Helper::GeneralSiteSettings($site_desc_var);
+        $PageKeywords = Helper::GeneralSiteSettings($site_keywords_var);
+        return View('frontEnd.tablegames',compact("PageTitle","PageDescription",
+                "PageKeywords",));
+    }
+    public function sportsbook(){
+        $site_desc_var = "site_desc_" . @Helper::currentLanguage()->code;
+        $site_keywords_var = "site_keywords_" . @Helper::currentLanguage()->code;
+        $PageTitle = "Sports book";
+        $PageDescription = Helper::GeneralSiteSettings($site_desc_var);
+        $PageKeywords = Helper::GeneralSiteSettings($site_keywords_var);
+        return View('frontEnd.sportsbook',compact("PageTitle","PageDescription",
+                "PageKeywords",));
+    }
+    public function fishing(){
+        $site_desc_var = "site_desc_" . @Helper::currentLanguage()->code;
+        $site_keywords_var = "site_keywords_" . @Helper::currentLanguage()->code;
+        $PageTitle = "Fishing";
+        $PageDescription = Helper::GeneralSiteSettings($site_desc_var);
+        $PageKeywords = Helper::GeneralSiteSettings($site_keywords_var);
+        return View('frontEnd.fishing',compact("PageTitle","PageDescription",
+                "PageKeywords",));
+    }
+    public function crash(){
+        $site_desc_var = "site_desc_" . @Helper::currentLanguage()->code;
+        $site_keywords_var = "site_keywords_" . @Helper::currentLanguage()->code;
+        $PageTitle = "Crash";
+        $PageDescription = Helper::GeneralSiteSettings($site_desc_var);
+        $PageKeywords = Helper::GeneralSiteSettings($site_keywords_var);
+        return View('frontEnd.crash',compact("PageTitle","PageDescription",
+                "PageKeywords",));
+    }
+    public function promotion(){
+        $site_desc_var = "site_desc_" . @Helper::currentLanguage()->code;
+        $site_keywords_var = "site_keywords_" . @Helper::currentLanguage()->code;
+        $PageTitle = "Promotion";
+        $PageDescription = Helper::GeneralSiteSettings($site_desc_var);
+        $PageKeywords = Helper::GeneralSiteSettings($site_keywords_var);
+        return View('frontEnd.promotion',compact("PageTitle","PageDescription",
+                "PageKeywords",));
+    }
+    public function vipProfile(){
+        $site_desc_var = "site_desc_" . @Helper::currentLanguage()->code;
+        $site_keywords_var = "site_keywords_" . @Helper::currentLanguage()->code;
+        $PageTitle = "vip Profile";
+        $PageDescription = Helper::GeneralSiteSettings($site_desc_var);
+        $PageKeywords = Helper::GeneralSiteSettings($site_keywords_var);
+        return View('frontEnd.vipProfile',compact("PageTitle","PageDescription",
+                "PageKeywords",));
+    }
     public function login(){
         $site_desc_var = "site_desc_" . @Helper::currentLanguage()->code;
         $site_keywords_var = "site_keywords_" . @Helper::currentLanguage()->code;
