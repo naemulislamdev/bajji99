@@ -4,13 +4,16 @@
 }
 
 @media (max-width: 1024px) {
-  
+    .flexslider .slides img {
+        height: 280px;
+    }
 }
 
 @media (max-width: 992px) {
     .menu-icon {
         display: block;
-        color: #000;
+        color: #15092e;
+        font-size: 24px;
     }
 
     .menu-area {
@@ -18,6 +21,9 @@
     }
     .top-bar-right-btn {
         display: none;
+    }
+    .mobile-login-btn{
+        display: block;
     }
     .ud-sidebar {
         display: none;
@@ -34,7 +40,9 @@
     .register-banner{display: none;}
     .desktop-v{display: none;}
     .desktop-v{display: none;}
-    .categories-g-mobile-v{display: block;}
+    .categories-g-mobile-v {
+        display: block;
+    }
     .slider-mobile-img{display: block;}
     .carousel-indicators {
         position: absolute;
@@ -47,18 +55,26 @@
 
 @media (max-width: 768px) {
     .top-left > a > img {
-        width: 190px;
+        width: 120px;
     }
     .top-right-img {
-        width: 17px;
+        width: 22px;
+    }
+    .flexslider .slides img {
+        height: 223px;
     }
    
 }
 
 @media (max-width: 480px) {
+    .flexslider .slides img {
+        height: 144px;
+    }
  
 }
 
 @media (max-width: 320px) {
- 
+    .flexslider .slides img {
+        height: 140px;
+    }
 }

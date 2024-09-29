@@ -51,7 +51,7 @@
                 <div class="row mb-3">
                     <div class="col">
                         <div class="heading-title">
-                            <h3>হট গেমস</h3>
+                            <h3>Hot Games</h3>
                         </div>
                     </div>
                 </div>

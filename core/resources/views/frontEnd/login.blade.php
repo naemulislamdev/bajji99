@@ -32,8 +32,8 @@
             <div class="row">
                 <div class="col-md-5 mx-auto">
                     <div class="register-container">
-                        <h1>প্রবেশ করুন</h1>
-                        <p>স্বাগতম!</p>
+                        <h1>Login</h1>
+                        <p>Welcome back!</p>
                         <div class="register-box">
                             <div class="row">
                                 <div class="col-md-10 mx-auto">
@@ -41,45 +41,44 @@
                                         @csrf
                                         <div class="form-group">
                                             <div class="d-flex justify-content-between">
-                                                <label>ব্যবহারকারীর নাম <span class="text-danger">*</span></label> <a
+                                                <label>Username <span class="text-danger">*</span></label> <a
                                                     class="tooltip-btn" href="#" data-toggle="tooltip"
-                                                    data-placement="top" title="কমপক্ষে ৬ থেকে ১১ টি আক্ষর থাকতে হবে।">?</a>
+                                                    data-placement="top" title="Must have at least 6 to 11 characters.">?</a>
                                             </div>
                                             <input type="text" name="username" class="form-control"
-                                                placeholder="এখানে পূ্রন করুন">
+                                                placeholder="Fill up here">
                                             @error('username')
                                                 <span class="text-danger">{{ $message }}</span>
                                             @enderror
                                         </div>
                                         <div class="form-group">
                                             <div class="d-flex justify-content-between">
-                                                <label>গোপন নম্বর <span class="text-danger">*</span></label> <a
+                                                <label>Password <span class="text-danger">*</span></label> <a
                                                     class="tooltip-btn" href="#" data-toggle="tooltip"
-                                                    data-placement="top" title="কমপক্ষে ৬ থেকে ১৪ টি আক্ষর থাকতে হবে।">?</a>
+                                                    data-placement="top" title="Must have at least 6 to 14 characters.">?</a>
                                             </div>
                                             <input type="password" name="password" class="form-control"
-                                                placeholder="এখানে পাসওয়ার্ড নিশ্চিত করুন">
+                                                placeholder="Fill up here">
                                             @error('password')
                                                 <span class="text-danger">{{ $message }}</span>
                                             @enderror
                                         </div>
                                         <div class="form-group">
-                                            <button class="btn btn-warning col-md-12">প্রবেশ করুন</button>
+                                            <button class="btn btn-warning col-md-12">Login</button>
                                         </div>
                                     </form>
                                     <div class="form-group text-center">
                                         <p class="m-0"><a href="#" data-toggle="modal"
-                                                data-target="#forgetPassword">পাসওয়ার্ড ভুলে গেছেন?</a></p>
+                                                data-target="#forgetPassword">Forgot Password?</a></p>
                                         <span class="text-center" for="">
-                                            কোনো একাউন্ট এখনও নেই? <a href="{{ route('front.register') }}"> Register
+                                            Don’t have an account yet? <a href="{{ route('front.register') }}"> Register
                                                 here</a>
                                         </span>
                                     </div>
                                     <hr>
                                     <div>
                                         <span>
-                                            আপনি যদি লগ ইন করতে কোনো সমস্যার সম্মুখীন হন, দয়া করে LiveChat এর মাধ্যমে
-                                            সহায়তার জন্য আমাদের গ্রাহক পরিষেবার সাথে যোগাযোগ করুন৷</span>
+                                            If you encounter any issue logging in, please contact our customer service for assistance via LiveChat.</span>
                                     </div>
                                 </div>
                             </div>

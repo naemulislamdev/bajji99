@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 :root{
-    --lato: "Lato", sans-serif
+    --lato: "Lato", sans-serif;
 }
 
 .container {
@@ -39,12 +39,23 @@
       max-width: 1400px
   }
 }
+body{
+    /* background: #15092e; */
+    background: #4a3773;
+}
 img {
   max-width: 100%;
   height: auto; }
   .row{margin-bottom: 0 !important;}
-
+  .flex-control-paging li a {
+    background: rgb(253 207 9);
+}
 /*Topbar Section*/
+.top-section{
+    /* background-color: #580058; */
+    background: rgb(128,28,128);
+background: linear-gradient(90deg, rgba(128,28,128,1) 0%, rgba(159,33,159,1) 30%, rgba(182,20,182,1) 53%, rgba(128,28,128,1) 100%);
+}
 .top-left > a > img{
     width: 150px;
 }
@@ -74,7 +85,9 @@ img {
     padding: 3px 0px;
     color: #fff;
 }
-
+.flexslider .slides img {
+    height: 400px;
+}
 /*-----------User dashboard mobile manue design-------------*/
 .bottom-btn > .ud-ac-manue {
     background-color: #000;
@@ -255,11 +268,15 @@ img {
 .register-banner > img{
     width: 100%;
 }
+.register-banner-sec {
+    margin: 20px 0px;
+}
 /***************** *********************
         Game box style
 ****************** ********************/
-.heading-title > h3{
+.heading-title > h3 {
     font-size: 22px;
+    color: #fff;
 }
 /* .game-box{} */
 .game-box > .img-box{
@@ -269,7 +286,7 @@ img {
     width: 100%;
     opacity: 1;
     height: 100%;
-    border-radius: 30px;
+    border-radius: 18px;
     transition: all 0.3s ease;
 }
 .game-box > a > .play-box {
@@ -310,46 +327,16 @@ img {
 .game-box > .content > h4 {
     font-size: 14px;
     margin: 0;
-    text-align: center;
+    color: #fff;
 }
 .game-box > .content > span{
     font-size: 13px;
+    font-weight: 600;
+    color: #fff;
 }
 /*---------Carousel slider banner ------*/
-.slider-mobile-img{
-    display: none;
-}
-.slider-mobile-img > img{width: 100%;}
-.carousel-indicators {
-    margin-left: -67%;
-}
-.carousel-indicators li {
-    width: 17px;
-    height: 17px;
-    background-color: rgba(255,255,255,.5);
-    border-radius: 50%;
-}
-.carousel-indicators .active {
-    background-color: #fed009;
-}
-.carousel-banner-box{
-  background-size: cover;
-  width: 100%;
-  height: 100%;
-  border-radius: 15px;
-  /* padding: 13px 13px; */
-}
-.video-box{
-    margin: 5px;
-}
-.video-box > iframe {
-    width: 100%;
-    height: 294px;
-    border-radius: 10px;
-}
 .bottom-right {
-    position: absolute;
-    
+    position: absolute;  
 }
 .right-img-box{
     position: fixed;
@@ -365,6 +352,10 @@ img {
     width: 70px;
     margin-bottom: 12px;
     border-radius: 50%;
+}
+.download-img > a > img {
+    width: 100%;
+    border-radius: 15px;
 }
 /*--------------Footer style ---------------------------*/
 footer{
@@ -704,7 +695,7 @@ margin: 0;
     display: none;
 }
 .homePageCat-box {
-    background: #000;
+    background: #cf07cf;
     margin-right: 9px;
     border-radius: 5px;
     height: 74px;
@@ -768,8 +759,30 @@ margin: 0;
 }
 .md-g-box > .game-box > .img-box {
     height: 110px;
+    padding: 2px 7px;
 }
-.md-cricket-img >img{
+.md-cricket-img >img, .md-casino-img > img{
     border-radius: 10px;
     margin-bottom: 10px;
+}
+.mobile-login-btn{display: none;}
+.mobile-login-btn > a {
+    background-color: #15092e;
+    color: #fff;
+    padding: 4px 10px;
+}
+/*----language- modal-------------*/
+.language-img > img{
+    width: 100%;
+    height: 100%;
+}
+.lan-currency{}
+.lan-btn > button{
+    display: block;
+    border: 1px solid #ddd;
+    padding: 5px 30px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
 }

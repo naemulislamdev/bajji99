@@ -71,6 +71,7 @@
             box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
             padding: 5px 5px;
             border-radius: 5px;
+            background: #fff;
         }
 
         .right_panel_title {

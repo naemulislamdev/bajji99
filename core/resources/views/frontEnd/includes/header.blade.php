@@ -9,14 +9,14 @@ $request = request()->route()->getName();
                     <ul class="navbar-nav mt-2 mt-lg-0"></ul>
                     <ul class="navbar-nav navbar-light">
                         <li class="nav-item">
-                            <a class="nav-link {{ $request == 'cricket'? 'manue-active':'' }}" href="{{ route('cricket')}}">ক্রিকেট</a>
+                            <a class="nav-link {{ $request == 'cricket'? 'manue-active':'' }}" href="{{ route('cricket')}}">Cricket</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{ $request == 'casino'? 'manue-active':'' }}" href="{{ route('casino')}}">ক্যাসিনো</a>
+                            <a class="nav-link {{ $request == 'casino'? 'manue-active':'' }}" href="{{ route('casino')}}">Live Casino</a>
                         </li>
                         <!--========-->
                         <li class="nav-item dropdown megamenu-li dmenu">
-                            <a class="nav-link {{ $request == 'sloat'? 'manue-active':'' }}" href="{{ route('sloat')}}" id="dropdown01">স্লট গেম</a>
+                            <a class="nav-link {{ $request == 'sloat'? 'manue-active':'' }}" href="{{ route('sloat')}}" id="dropdown01">Slot Games</a>
                             <div class="dropdown-menu megamenu sm-menu border-top" aria-labelledby="dropdown01">
                                 <div class="row">
                                     <div class="col-sm-6 col-lg-2 mb-4">
@@ -86,7 +86,7 @@ $request = request()->route()->getName();
                         </li>
                         <!--=========-->
                         <li class="nav-item dropdown megamenu-li dmenu">
-                            <a class="nav-link {{ $request == 'tablegames'? 'manue-active':'' }}" href="{{ route('tablegames')}}">টেবিল গেম</a>
+                            <a class="nav-link {{ $request == 'tablegames'? 'manue-active':'' }}" href="{{ route('tablegames')}}">Table Games</a>
                             <div class="dropdown-menu megamenu sm-menu border-top" aria-labelledby="dropdown01">
                                 <div class="row">
                                     <div class="col-sm-6 col-lg-2 mb-4">
@@ -155,7 +155,7 @@ $request = request()->route()->getName();
                             </div>
                         </li>
                         <li class="nav-item dropdown megamenu-li dmenu">
-                            <a class="nav-link {{ $request == 'sportsbook'? 'manue-active':'' }}" href="{{ route('sportsbook')}}">খেলার বই</a>
+                            <a class="nav-link {{ $request == 'sportsbook'? 'manue-active':'' }}" href="{{ route('sportsbook')}}">Sportsbook</a>
                             <div class="dropdown-menu megamenu sm-menu border-top" aria-labelledby="dropdown01">
                                 <div class="row">
                                     <div class="col-sm-6 col-lg-2 mb-4">
@@ -224,7 +224,7 @@ $request = request()->route()->getName();
                             </div>
                         </li>
                         <li class="nav-item dropdown megamenu-li dmenu">
-                            <a class="nav-link {{ $request == 'fishing'? 'manue-active':'' }}" href="{{ route('fishing')}}">মাছ ধরা</a>
+                            <a class="nav-link {{ $request == 'fishing'? 'manue-active':'' }}" href="{{ route('fishing')}}"> Fishing</a>
                             <div class="dropdown-menu megamenu sm-menu border-top" aria-labelledby="dropdown01">
                                 <div class="row">
                                     <div class="col-sm-6 col-lg-2 mb-4">
@@ -293,7 +293,7 @@ $request = request()->route()->getName();
                             </div>
                         </li>
                         <li class="nav-item dropdown megamenu-li dmenu">
-                            <a class="nav-link {{ $request == 'crash'? 'manue-active':'' }}" href="{{ route('crash')}}">ক্র্যাশ</a>
+                            <a class="nav-link {{ $request == 'crash'? 'manue-active':'' }}" href="{{ route('crash')}}">Crash</a>
                             <div class="dropdown-menu megamenu sm-menu border-top" aria-labelledby="dropdown01">
                                 <div class="row">
                                     <div class="col-sm-6 col-lg-2 mb-4">
@@ -360,15 +360,6 @@ $request = request()->route()->getName();
                                     </div>
                                 </div>
                             </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {{ $request == 'promotion'? 'manue-active':'' }}" href="{{ route('promotion')}}">প্রমোশন</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {{ $request == 'vipProfile'? 'manue-active':'' }}" href="{{ route('vipProfile')}}">বেটিং পাস</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="">সুপারিশ</a>
                         </li>
                     </ul>
                 </div>
@@ -380,8 +371,8 @@ $request = request()->route()->getName();
 <!--start mobile menu-->
 <div class="mobile-menu">
     <div class="mm-logo" style="background: #fff; padding: 11px 18px">
-        <a href="#">
-            <img style="width:160px;" src="{{ asset('assets/frontend/img/bajji-img/top-logo.svg') }}" />
+        <a href="{{ route('Home')}}">
+            <img style="width:110px;" src="{{ asset('assets/frontend/img/logo/bajji99-logo.png') }}" />
         </a>
         <div class="mm-cross-icon">
             <i class="fa fa-times mm-ci"></i>
@@ -391,54 +382,44 @@ $request = request()->route()->getName();
         <div class="accordion" id="accordionExample">
             <div class="menu-box">
                 <div class="menu-link">
-                    <a href="{{ route('promotion')}}"><i class="fa fa-venus-double mr-2"></i>প্রমোশন</a>
+                    <a href="{{ route('Home')}}"><i class="fa fa-venus-double mr-2"></i>Home</a>
                 </div>
                 <div class="menu-link">
-                    <a href="#"><i class="fa fa-venus-double mr-2"></i>রেফারেল প্রোগ্রাম</a>
+                    <a href="{{ route('cricket')}}"><i class="fa fa-venus-double mr-2"></i>Cricket</a>
                 </div>
                 <div class="menu-link">
-                    <a href="{{ route('vipProfile')}}"><i class="fa fa-venus-double mr-2"></i>বেটিং পাস <span
-                            class="badge badge-success">new</span></a>
+                    <a href="{{ route('casino')}}"><i class="fa fa-venus-double mr-2"></i>Casino</a>
                 </div>
                 <div class="menu-link">
-                    <a href="#"><i class="fa fa-venus-double mr-2"></i>অধিভুক্ত</a>
+                    <a href="{{ route('sloat')}}"><i class="fa fa-venus-double mr-2"></i>Slot Games</a>
                 </div>
                 <div class="menu-link">
-                    <span class="ml-2">Games</span>
+                    <a href="{{ route('tablegames')}}"><i class="fa fa-venus-double mr-2"></i>Table Games</a>
                 </div>
                 <div class="menu-link">
-                    <a href="{{ route('cricket')}}"><i class="fa fa-venus-double mr-2"></i>ক্রিকেট</a>
+                    <a href="{{ route('sportsbook')}}"><i class="fa fa-venus-double mr-2"></i>Sportsbook</a>
                 </div>
                 <div class="menu-link">
-                    <a href="{{ route('casino')}}"><i class="fa fa-venus-double mr-2"></i>ক্যাসিনো</a>
+                    <a href="{{ route('fishing')}}"><i class="fa fa-venus-double mr-2"></i>Fishing</a>
                 </div>
                 <div class="menu-link">
-                    <a href="{{ route('sloat')}}"><i class="fa fa-venus-double mr-2"></i>স্লট গেম</a>
-                </div>
-                <div class="menu-link">
-                    <a href="{{ route('tablegames')}}"><i class="fa fa-venus-double mr-2"></i>টেবিল গেম</a>
-                </div>
-                <div class="menu-link">
-                    <a href="{{ route('sportsbook')}}"><i class="fa fa-venus-double mr-2"></i>খেলার বই</a>
-                </div>
-                <div class="menu-link">
-                    <a href="{{ route('crash')}}"><i class="fa fa-venus-double mr-2"></i>ক্র্যাশ <span
+                    <a href="{{ route('crash')}}"><i class="fa fa-venus-double mr-2"></i>Crash <span
                             class="badge badge-success">new</span></a>
                 </div>
                 <div class="menu-link">
                     <span class="ml-2">Others</span>
                 </div>
                 <div class="menu-link">
-                    <a href="#"><i class="fa fa-globe mr-2"></i> ভাষা</a>
+                    <a href="#"><i class="fa fa-globe mr-2"></i> Language</a>
                 </div>
                 <div class="menu-link">
-                    <a href="#"><i class="fa fa-question-circle-o mr-2"></i> প্রায়শই জিজ্ঞাসিত প্রশ্নাবল</a>
+                    <a href="#"><i class="fa fa-question-circle-o mr-2"></i> FAQ</a>
                 </div>
                 <div class="menu-link">
-                    <a href="#"><i class="fa fa-commenting-o mr-2"></i>সরাসরি কথোপকথন</a>
+                    <a href="#"><i class="fa fa-commenting-o mr-2"></i>Live Chat</a>
                 </div>
                 <div class="menu-link">
-                    <a href="#"><i class="fa fa-download mr-2"></i>ডাউনলোড করুন</a>
+                    <a href="#"><i class="fa fa-download mr-2"></i>Download App</a>
                 </div>
             </div>
         </div>

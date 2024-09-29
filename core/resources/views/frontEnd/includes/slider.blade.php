@@ -1,60 +1,26 @@
 <style>
-    #announce_slider{
-    overflow: hidden;
-    height: 40px;
-    padding: 5px 0%;
-    background: #021b35;
-    color: #ffff;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-}
-#announce_slider .nutish{
-    padding: 0 10px;
-    min-width: ;
-    height: 100%;
-    text-align: center;
-    background: #021b35;
-    border-right: 1px solid #fff;
+    #announce-slider {
+        overflow: hidden;
+        height: 40px;
+        padding: 5px 0%;
+        background: #313131;
+        color: #ffff;
+    }
+
+    #announce-slider .context > h4 {
     color: #e8e2ff;
-}
-#announce_slider .box{
-    overflow: hidden;
-    overflow: ;
-    width: 96%;
-    height: 100%;
-    margin: 0 auto;
-    position: relative;
-}
-#announce_slider .context{
-    user-select: none;
-    overflow: hidden;
-    width: auto;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    white-space: nowrap;
-    animation-name: announce;
-    animation-duration: 5s;
-    animation-delay: 0s;
-    animation-direction: alternate;
-    animation-iteration-count: infinite;
-    position: absolute;
-    left: 0%;
-}
-.flexslider .slides img {
-    height: 300px;
+    font-size: 14px;
+    margin: 0;
+    padding: 5px 0px;
 }
 </style>
 
 
-@if(count($SliderBanners)>0)
+@if (count($SliderBanners) > 0)
     <section id="featured">
         <!-- start slider -->
         <!-- Slider -->
-        @foreach($SliderBanners->slice(0,1) as $SliderBanner)
+        @foreach ($SliderBanners->slice(0, 1) as $SliderBanner)
             <?php
             try {
                 $SliderBanner_type = $SliderBanner->webmasterBanner->type;
@@ -64,126 +30,127 @@
             ?>
         @endforeach
         <?php
-        $title_var = "title_" . @Helper::currentLanguage()->code;
-        $title_var2 = "title_" . env('DEFAULT_LANGUAGE');
-        $details_var = "details_" . @Helper::currentLanguage()->code;
-        $details_var2 = "details_" . env('DEFAULT_LANGUAGE');
-        $file_var = "file_" . @Helper::currentLanguage()->code;
-        $file_var2 = "file_" . env('DEFAULT_LANGUAGE');
+        $title_var = 'title_' . @Helper::currentLanguage()->code;
+        $title_var2 = 'title_' . env('DEFAULT_LANGUAGE');
+        $details_var = 'details_' . @Helper::currentLanguage()->code;
+        $details_var2 = 'details_' . env('DEFAULT_LANGUAGE');
+        $file_var = 'file_' . @Helper::currentLanguage()->code;
+        $file_var2 = 'file_' . env('DEFAULT_LANGUAGE');
         ?>
-        @if($SliderBanner_type==0)
-            {{-- Text/Code Banners--}}
+        @if ($SliderBanner_type == 0)
+            {{-- Text/Code Banners --}}
             <div class="text-center">
-                @foreach($SliderBanners as $SliderBanner)
+                @foreach ($SliderBanners as $SliderBanner)
                     <?php
-                    if ($SliderBanner->$details_var != "") {
+                    if ($SliderBanner->$details_var != '') {
                         $BDetails = $SliderBanner->$details_var;
                     } else {
                         $BDetails = $SliderBanner->$details_var2;
                     }
                     ?>
-                    @if($BDetails !="")
+                    @if ($BDetails != '')
                         <div>{!! $BDetails !!}</div>
                     @endif
                 @endforeach
             </div>
-        @elseif($SliderBanner_type==1)
-            {{-- Photo Slider Banners--}}
+        @elseif($SliderBanner_type == 1)
+            {{-- Photo Slider Banners --}}
             <div id="main-slider" class="flexslider">
                 <ul class="slides">
-                    @foreach($SliderBanners as $SliderBanner)
+                    @foreach ($SliderBanners as $SliderBanner)
                         <?php
-                        if ($SliderBanner->$title_var != "") {
+                        if ($SliderBanner->$title_var != '') {
                             $BTitle = $SliderBanner->$title_var;
                         } else {
                             $BTitle = $SliderBanner->$title_var2;
                         }
                         $BDetails = $SliderBanner->$details_var;
-                        if ($SliderBanner->$file_var != "") {
+                        if ($SliderBanner->$file_var != '') {
                             $BFile = $SliderBanner->$file_var;
                         } else {
                             $BFile = $SliderBanner->$file_var2;
                         }
                         ?>
                         <li>
-                            <img src="{{ URL::to('uploads/banners/'.$BFile) }}"
-                                 alt="{{ $BTitle }}"/>
+                            <img src="{{ URL::to('uploads/banners/' . $BFile) }}" alt="{{ $BTitle }}" />
                         </li>
                     @endforeach
                 </ul>
             </div>
         @else
-            {{-- Video Banners--}}
+            {{-- Video Banners --}}
             <div class="text-center">
-                @foreach($SliderBanners as $SliderBanner)
+                @foreach ($SliderBanners as $SliderBanner)
                     <?php
-                    if ($SliderBanner->$title_var != "") {
+                    if ($SliderBanner->$title_var != '') {
                         $BTitle = $SliderBanner->$title_var;
                     } else {
                         $BTitle = $SliderBanner->$title_var2;
                     }
-                    if ($SliderBanner->$details_var != "") {
+                    if ($SliderBanner->$details_var != '') {
                         $BDetails = $SliderBanner->$details_var;
                     } else {
                         $BDetails = $SliderBanner->$details_var2;
                     }
-                    if ($SliderBanner->$file_var != "") {
+                    if ($SliderBanner->$file_var != '') {
                         $BFile = $SliderBanner->$file_var;
                     } else {
                         $BFile = $SliderBanner->$file_var2;
                     }
                     ?>
-                    @if($SliderBanner->youtube_link !="")
-                        @if($SliderBanner->video_type ==1)
+                    @if ($SliderBanner->youtube_link != '')
+                        @if ($SliderBanner->video_type == 1)
                             <?php
                             $Youtube_id = Helper::Get_youtube_video_id($SliderBanner->youtube_link);
                             ?>
-                            @if($Youtube_id !="")
+                            @if ($Youtube_id != '')
                                 {{-- Youtube Video --}}
                                 <iframe width="100%" height="500" frameborder="0" allowfullscreen
-                                        src="https://www.youtube.com/embed/{{ $Youtube_id }}?autoplay=1&mute=1" allow="autoplay">
+                                    src="https://www.youtube.com/embed/{{ $Youtube_id }}?autoplay=1&mute=1"
+                                    allow="autoplay">
                                 </iframe>
                             @endif
-                        @elseif($SliderBanner->video_type ==2)
+                        @elseif($SliderBanner->video_type == 2)
                             <?php
                             $Vimeo_id = Helper::Get_vimeo_video_id($SliderBanner->youtube_link);
                             ?>
-                            @if($Vimeo_id !="")
+                            @if ($Vimeo_id != '')
                                 {{-- Vimeo Video --}}
                                 <iframe width="100%" height="500" frameborder="0" allowfullscreen
-                                        src="https://player.vimeo.com/video/{{ $Vimeo_id }}?title=0&amp;byline=0">
+                                    src="https://player.vimeo.com/video/{{ $Vimeo_id }}?title=0&amp;byline=0">
                                 </iframe>
                             @endif
                         @endif
                     @endif
-                    @if($SliderBanner->video_type ==0)
-                        @if($BFile !="")
+                    @if ($SliderBanner->video_type == 0)
+                        @if ($BFile != '')
                             {{-- Direct Video --}}
                             <video width="100%" height="500" controls autoplay>
-                                <source src="{{ URL::to('uploads/banners/'.$BFile) }}"
-                                        type="video/mp4">
+                                <source src="{{ URL::to('uploads/banners/' . $BFile) }}" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                         @endif
                     @endif
-                    @if($BDetails !="")
+                    @if ($BDetails != '')
                         <div>{!! $BDetails !!}</div>
                     @endif
                 @endforeach
             </div>
-    @endif
-    <!-- end slider -->
+        @endif
+        <!-- end slider -->
     </section>
 @endif
-<div class="container">
-    <div class="row">
-        <div class="col-md-10 mx-auto">
-            <div id="announce_slider" >
-        <div class="box">
-            <div class="context" >ব্যাটিং করার জন্য যারা প্রিমিয়াম সাইট agentlist24.com  আপনার জন্য বেস্ট। এজেন্ট নিয়ে কাজ করতে হলে Admin ও Super Agent এর সাথে যোগাযোগ করুন। এই এজেন্ট লিস্টের কেউ যদি আপনার সাথে প্রতারণা করে এডমিন এর সাথে যোগাযোগ করবেন।</div>
-        </div>
-    </div>
-        </div>
-    </div>
-</div>
 
+<section id="announce-slider">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 mx-auto">
+                    <div class="context">
+                        <h4><marquee onmouseover="this.stop();" onmouseout="this.start();">For batting those premium site bajji99.com is best for you. the agent
+                            Contact Admin and Super Agent to work with. If someone from this agent list is with you
+                            Contact the admin by cheating.</marquee></h4>
+                    </div>
+            </div>
+        </div>
+    </div>
+</section>

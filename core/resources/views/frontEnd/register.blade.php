@@ -35,9 +35,9 @@ label {
                                     @csrf
                                     <div class="form-group">
                                         <div class="d-flex justify-content-between">
-                                            <label>ব্যবহারকারীর নাম <span class="text-danger">*</span></label> <a class="tooltip-btn" href="#" data-toggle="tooltip" data-placement="top" title="কমপক্ষে ৬ থেকে ১১ টি আক্ষর থাকতে হবে।">?</a>
+                                            <label>Username <span class="text-danger">*</span></label> <a class="tooltip-btn" href="#" data-toggle="tooltip" data-placement="top" title="Must have at least 6 to 11 characters.">?</a>
                                         </div>
-                                        <input type="text" id="username" name="username" autocomplete="off" class="form-control" placeholder="এখানে পূ্রন করুন">
+                                        <input type="text" id="username" name="username" autocomplete="off" class="form-control" placeholder="Fill up here">
                                             <span id="username-error" class="text-danger"></span>
                                         @error('username')
                                         <span class="text-danger">{{$message}}</span>
@@ -45,7 +45,7 @@ label {
                                     </div>
                                     <div class="form-group">
                                         <div class="d-flex justify-content-between">
-                                            <label>গোপন নম্বর <span class="text-danger">*</span></label> <a class="tooltip-btn" href="#" data-toggle="tooltip" data-placement="top" title="কমপক্ষে ৬ থেকে ১৪ টি আক্ষর থাকতে হবে।">?</a>
+                                            <label>Password <span class="text-danger">*</span></label> <a class="tooltip-btn" href="#" data-toggle="tooltip" data-placement="top" title="Must have at least 6 to 14 characters.">?</a>
                                         </div>
                                         <input type="password" name="password" class="form-control" placeholder="এখানে পাসওয়ার্ড নিশ্চিত করুন">
                                         @error('password')
@@ -53,14 +53,14 @@ label {
                                         @enderror
                                     </div>
                                     <div class="form-group">
-                                            <label>পাসওয়ার্ড নিশ্চিত করুন <span class="text-danger">*</span></label>
+                                            <label>Ponfirm Password <span class="text-danger">*</span></label>
                                         <input type="password" name="confirm_password" class="form-control" placeholder="পাসওয়ার্ড নিশ্চিত করুন">
                                         @error('confirm_password')
                                         <span class="text-danger">{{$message}}</span>
                                         @enderror
                                     </div>
                                     <div class="form-group">
-                                            <label>মুদ্রা <span class="text-danger">*</span></label>
+                                            <label>Currency <span class="text-danger">*</span></label>
                                         <div class="row">
                                             <div class="col-md-2">
                                                 <img src="{{asset('assets/frontend/img/bajji-img/bdt.svg')}}" width="38px;" alt="">
@@ -78,13 +78,13 @@ label {
                                         @enderror
                                     </div>
                                     <div class="form-group">
-                                            <label>মোবাইল নম্বর <span class="text-danger">*</span></label>
+                                            <label>Mobile Number <span class="text-danger">*</span></label>
                                         <div class="row">
                                             <div class="col-md-3">
                                                 <input type="text" placeholder="+880" value="+880" readonly class="form-control">
                                             </div>
                                             <div class="col-md-9">
-                                                <input type="text" placeholder="এখানে পূ্রন করুন" name="phone" class="form-control">
+                                                <input type="text" placeholder="Fill up here" name="phone" class="form-control">
                                             </div>
                                         </div>
                                         @error('phone')
@@ -92,7 +92,7 @@ label {
                                         @enderror
                                     </div>
                                     <div class="form-group">
-                                        <label>ভেরিফিকেশন কোড <span class="text-danger">*</span></label>
+                                        <label>Verification Code <span class="text-danger">*</span></label>
                                         <div class="row">
                                             <div class="col-md-8">
                                                 <input type="text" placeholder="এখানে কোড টি লিখুন" name="verify_code" id="verify" class="form-control">
@@ -113,12 +113,12 @@ label {
                                     </div>
 
                                     <div class="form-group">
-                                        <button type="submit" class="btn btn-warning col-md-12">নিবন্ধন</button>
+                                        <button type="submit" class="btn btn-warning col-md-12">Register</button>
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
                                         <span class="form-check-label" for="defaultCheck1">
-                                            রেজিস্টার বোতামে ক্লিক করে, আমি এতদ্বারা স্বীকার করছি যে আমার বয়স 18 বছরের বেশি এবং আমি আপনার শর্তাবলী পড়েছি এবং মেনে নিয়েছি।
+                                            By clicking the Register button, I hereby acknowledge that I am above 18 years old and have read and accepted your terms & conditions.
                                         </span>
                                       </div>
                                 </form>
